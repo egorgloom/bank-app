@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.recentContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: $bg-container;
+    padding: 20px;
+    border-radius: 20px;
+
+    .recent {
+        font-size: $fs20;
+        color: $light-gray;
+    }
+    .allContacts {
+        font-size: $fs17;
+        color: $purple;
+        cursor: pointer;
+        border-style: none;
+        background-color: transparent;
+
+        &:hover {
+            color: $purple-hover;
+        }
+    }
+
+    .lastUsers {
+        display: flex;
+        column-gap: 30px;
+
+        .lastUserList {
+            display: flex;
+            gap: 20px;
+            overflow: hidden;
+        }
+    }
+
+
+
+
+}

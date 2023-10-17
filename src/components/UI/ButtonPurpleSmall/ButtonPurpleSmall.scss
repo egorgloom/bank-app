@@ -1,0 +1,14 @@
+@import '../../../styles/variables.scss';
+
+
+.btnPurpleSmall {
+    font-size: $fs17;
+    color: $purple;
+    cursor: pointer;
+    border-style: none;
+    background-color: transparent;
+
+    &:hover {
+        color: $purple-hover;
+    }
+}

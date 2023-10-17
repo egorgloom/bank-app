@@ -1,0 +1,62 @@
+@import "../../../styles/variables.scss";
+
+.btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px 5px 25px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.darkGrey {
+    background-color: $dark-grey;
+
+    span {
+
+        color: $bg-container;
+        font-weight: 200;
+        font-size: $fs18;
+    }
+
+    .btnCircle {
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        font-size: $fs20;
+        border-style: none;
+        color: $bg-container;
+        background-color: $black;
+        cursor: pointer;
+
+    }
+
+}
+
+.lightGray {
+    background-color: $bg-main;
+    gap: 40px;
+
+    span {
+
+        color: $dark-grey;
+        font-weight: 200;
+        font-size: $fs16;
+    }
+
+    .btnCircle {
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        font-size: $fs20;
+        border-style: none;
+        color: $dark-grey;
+        background-color: $bg-container;
+        cursor: pointer;
+
+    }
+}
