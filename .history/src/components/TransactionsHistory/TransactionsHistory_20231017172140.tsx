@@ -117,7 +117,6 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
 
                                     readOnly
 
-
                                     value={`${formatDate.startDate}-${formatDate.endDate}`}
 
                                 />

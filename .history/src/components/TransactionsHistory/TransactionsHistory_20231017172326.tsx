@@ -28,23 +28,23 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
 
     const [sortedTransactions, setSortedTransactions] = useState<ITransactionsHistory[]>([]); // результаты поиска
 
-    const [state, setState] = useState<any>([{
+    const [state, setState] = useState<any>({
         startDate: new Date(),
         endDate: new Date(),
         key: 'selection',
-    },])
+    })
 
     // handle date formatting
-    const [formatDate, setFormatDate] = useState<any>({
-        startDate: new Date(),
-        endDate: new Date(),
-    });
+    // const [formatDate, setFormatDate] = useState<any>({
+    //     startDate: new Date(),
+    //     endDate: new Date(),
+    // });
 
 
 
 
     useEffect(() => {
-        setFormatDate((prev: any) => {
+        setState((prev: any) => {
             return {
                 ...prev,
                 startDate: format(state[0].startDate, 'dd/MM/yyyy'),
@@ -111,16 +111,15 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                     <div className={styles.container}>
                         <div className={styles.elementContainer} ref={calendarRef}>
                             <div className={`dropdown ${open ? 'active' : 'inactive'}`}>
-                                <input
+                                {/* <input
 
                                     type='text'
 
                                     readOnly
 
-
                                     value={`${formatDate.startDate}-${formatDate.endDate}`}
 
-                                />
+                                /> */}
                                 <DateRange
                                     className={styles.calendarStyle}
                                     // onChange={(item) => setState([item.selection])}

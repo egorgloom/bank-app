@@ -103,7 +103,7 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                 <div className={styles.btnBlock}>
                     <BtnWithText
                         icon={<HiOutlineCalendarDays />}
-                        title='Select Date Range'
+                        title={`${formatDate.startDate}-${formatDate.endDate}`}
                         color='lightGray'
                         onClick={() => {
                             setOpen(!open)

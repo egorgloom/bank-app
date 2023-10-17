@@ -35,7 +35,7 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
     },])
 
     // handle date formatting
-    const [formatDate, setFormatDate] = useState<any>({
+    const [ formatDate ,setFormatDate] = useState<any>({
         startDate: new Date(),
         endDate: new Date(),
     });
@@ -75,8 +75,7 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                 transDate <= date.selection.endDate
             )
         })
-        setSortedTransactions(filtered);
-        setState([date.selection])
+        setSortedTransactions(filtered)
     }
 
 
@@ -111,16 +110,6 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                     <div className={styles.container}>
                         <div className={styles.elementContainer} ref={calendarRef}>
                             <div className={`dropdown ${open ? 'active' : 'inactive'}`}>
-                                <input
-
-                                    type='text'
-
-                                    readOnly
-
-
-                                    value={`${formatDate.startDate}-${formatDate.endDate}`}
-
-                                />
                                 <DateRange
                                     className={styles.calendarStyle}
                                     // onChange={(item) => setState([item.selection])}
@@ -140,11 +129,11 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                 </div>
             </div>
             <div className={styles.blockHistory}>
-                {sortedTransactions.map((elem) => {
-                    return (
-                        <UserHistory key={elem.id} {...elem} />
-                    )
-                })}
+                    {sortedTransactions.map((elem) => {
+                        return (
+                            <UserHistory key={elem.id} {...elem} />
+                        )
+                    })}
             </div>
 
         </div>
