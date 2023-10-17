@@ -87,23 +87,3 @@ input[type=number] {
 //   color: $bg-container;
 //   padding: 15px 20px;
 // }
-
-.dropdown {
-  position: absolute;
-  top: -23px;
-  right: 17px;
-}
-
-.dropdown.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: 500ms ease;
-}
-
-.dropdown.inactive {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-  transition: 500ms ease;
-}

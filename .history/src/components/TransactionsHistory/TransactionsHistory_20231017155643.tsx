@@ -137,18 +137,23 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                                 />
                             </div>
                         </div>
+
+
+
                     </div>
                     <BtnDashed color='purple' icon={<IoMdArrowDropright />} />
+
                 </div>
             </div>
             <div className={styles.blockHistory}>
+                <div>
                     {sortedTransactions.map((elem) => {
                         let date = new Date(elem.date)
                         return (
                             // <div key={elem.id}>{`${date}`}</div>
-                            <UserHistory key={elem.id} {...elem} />
+                            <UserHistory id={elem.id} key={elem.id}/>
                         )
-                    })}
+                    })}</div>
             </div>
 
         </div>

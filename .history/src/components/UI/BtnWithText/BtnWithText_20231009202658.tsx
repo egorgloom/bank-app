@@ -9,7 +9,6 @@ interface IBtnWithText {
     icon?: React.ReactNode,
     title?: string,
     color: 'darkGrey' | 'lightGray',
-    onClick?: React.MouseEventHandler<HTMLButtonElement>,
 
 }
 

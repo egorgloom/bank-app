@@ -7,11 +7,10 @@ import styles from './UserHistory.module.scss'
 
 
 const UserHistory: FC<ITransactionsHistory> = ({...props}) => {
-    let date = new Date(props.date);
 
 
     return (
-        <div className={styles.userBlock}>
+        <div className={styles.userBlock} key={props.id}>
             <div className={styles.user}>
                 <span>{props.firstName?.slice(0,1)}{props.lastName?.slice(0,1)}</span>
             </div>
@@ -21,8 +20,8 @@ const UserHistory: FC<ITransactionsHistory> = ({...props}) => {
             </div>
             <div className={styles.info}>
                 <span className={styles.first}>
-                    {`${date}`}
-                </span>
+
+                    </span>
                 <span className={styles.second}>{props.time}</span>
             </div>
             <div className={styles.sumBlock}>

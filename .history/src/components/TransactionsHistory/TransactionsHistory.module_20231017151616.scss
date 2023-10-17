@@ -25,33 +25,6 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
-
-            .container {
-                // padding: 5rem;
-    
-                .elementContainer {
-                    position: relative;
-    
-    
-    
-                    .calendarStyle {
-                        border: 1px solid #eee;
-                        font-family: poppins;
-                        border-radius: 1.5rem;
-                        z-index: 10;
-                        position: relative;
-                        background-color: #fff;
-                        width: 100%;
-                        height: auto;
-                        font-size: 10px;
-                    }
-    
-    
-    
-                }
-    
-    
-            }
         }
     }
 
@@ -61,8 +34,48 @@
         gap: 20px;
 
 
-       
+        .container {
+            // padding: 5rem;
 
+            .elementContainer {
+                position: relative;
+
+                .dropdown {
+                    position: absolute;
+                    /* top: 50px; */
+                    left: 0px;
+
+                    .calendarStyle {
+                        border: 1px solid #eee;
+                        font-family: poppins;
+                        border-radius: 1.5rem;
+                        z-index: 10;
+                        position: relative;
+                        background-color: #fff;
+                        width: 200px;
+                        height: auto;
+                        font-size: 10px;
+                      }
+                  }
+                  
+                  .dropdown.active {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                    transition: 500ms ease;
+                  }
+                  
+                  .dropdown.inactive {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-20px);
+                    transition: 500ms ease;
+                  }
+              }
+              
+
+          }
+          
         //   .calendarStyle {
         //     border: 1px solid #eee;
         //     font-family: poppins;
@@ -74,19 +87,19 @@
         //     height: auto;
         //     font-size: 10px;
         //   }
-
-        /* .icon {
+          
+          /* .icon {
             height: 1.6rem;
             width: 2rem;
           } */
-
-        /* input {
+          
+          /* input {
             height: 100%;
             width: 90%;
             border: none;
             outline: none;
           } */
-
+          
         //   .single-calendar-input {
         //     height: 4rem;
         //     width: 35rem;
@@ -99,8 +112,8 @@
         //     display: flex;
         //     align-items: center;
         //   }
-
-
+          
+         
 
     }
 }

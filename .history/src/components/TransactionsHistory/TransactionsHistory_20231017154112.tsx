@@ -16,9 +16,6 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
 import { DateRange } from 'react-date-range'
-import UserHistory from '../UserHistory/UserHistory';
-
-import { ITransactionsHistory } from './../../interfaces/interface';
 
 
 
@@ -29,7 +26,16 @@ import { ITransactionsHistory } from './../../interfaces/interface';
 
 // https://server-shop-co.onrender.com/history
 
-
+interface ITransactionsHistory {
+    id: number,
+    firstName?: string,
+    lastName?: string,
+    date?: any,
+    time?: string,
+    description?: string,
+    sum?: string,
+    currency?: string,
+}
 
 
 const TransactionsHistory: FC<ITransactionsHistory> = () => {
@@ -113,42 +119,53 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
             <div className={styles.titleContainer}>
                 <span className={styles.title}>Transactions History</span>
                 <div className={styles.btnBlock}>
-                    <BtnWithText
-                        icon={<HiOutlineCalendarDays />}
-                        title='Select Date Range'
-                        color='lightGray'
-                        onClick={() => {
-                            setOpen(!open)
-                        }} />
-                    <div className={styles.container}>
-                        <div className={styles.elementContainer} ref={calendarRef}>
-                            <div className={`dropdown ${open ? 'active' : 'inactive'}`}>
-                                <DateRange
-                                    className={styles.calendarStyle}
-                                    // onChange={(item) => setState([item.selection])}
-                                    onChange={handleSelection}
-                                    ranges={state}
-                                    // showSelectionPreview={false}
-                                    editableDateInputs={false}
-                                    showMonthAndYearPickers={false}
-                                    showDateDisplay={false}
-                                    rangeColors={['#4C988E', '#4C988E', '#000000']}
-                                    direction='horizontal'
-                                />
-                            </div>
+                    <BtnWithText 
+                    icon={<HiOutlineCalendarDays />} 
+                    title='Select Date Range' 
+                    color='lightGray' 
+                    onClick={() => {
+                        setOpen(!open)
+                    }}/>
+                                    <div className={styles.container}>
+                    <div className={styles.elementContainer} ref={calendarRef}>
+                        <div className={`dropdown ${open ? 'active' : 'inactive'}`}>
+                            <DateRange
+                                className={styles.calendarStyle}
+                                // onChange={(item) => setState([item.selection])}
+                                onChange={handleSelection}
+                                ranges={state}
+                                // showSelectionPreview={false}
+                                editableDateInputs={false}
+                                showMonthAndYearPickers={false}
+                                showDateDisplay={false}
+                                rangeColors={['#4C988E', '#4C988E', '#000000']}
+                                direction='horizontal'
+                            />
                         </div>
                     </div>
+
+                    
+
+                </div>
                     <BtnDashed color='purple' icon={<IoMdArrowDropright />} />
+
                 </div>
             </div>
             <div className={styles.blockHistory}>
-                    {sortedTransactions.map((elem) => {
-                        let date = new Date(elem.date)
-                        return (
-                            // <div key={elem.id}>{`${date}`}</div>
-                            <UserHistory key={elem.id} {...elem} />
-                        )
-                    })}
+            <div>
+                        {sortedTransactions.map((elem) => {
+                            let date = new Date(elem.date)
+                            return (
+                                <div key={elem.id}>{`${date}`}</div>
+                            )
+                        })}</div>
+                    <div>
+                        {sortedTransactions.length === 0 && <div>no result</div>}
+
+                    </div>
+
+
+
             </div>
 
         </div>

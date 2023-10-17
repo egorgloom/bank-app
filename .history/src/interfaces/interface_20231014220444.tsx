@@ -26,14 +26,3 @@ export interface IFormAuthorization {
     setPassword: React.Dispatch<React.SetStateAction<string>>,
     handleSubmit: (e: React.FormEvent) => void;
 }
-
-export interface ITransactionsHistory {
-    id: number,
-    firstName?: string,
-    lastName?: string,
-    date?: any,
-    time?: string,
-    description?: string,
-    sum?: string,
-    currency?: string,
-}
