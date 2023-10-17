@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './TransactionsHistory.module.scss';
-
+import UserHistory from './../UserHistory/UserHistory';
 
 import { HiOutlineCalendarDays } from 'react-icons/hi2';
 
@@ -10,7 +10,7 @@ import { IoMdArrowDropright } from 'react-icons/io';
 import BtnWithText from '../UI/BtnWithText/BtnWithText';
 import BtnDashed from '../UI/BtnCircle/BtnCircle';
 
-
+import { IHistory } from '../../interfaces/interface';
 
 
 
