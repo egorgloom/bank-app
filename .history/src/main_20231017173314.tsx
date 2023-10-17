@@ -23,8 +23,6 @@ import './index.scss'
 import SignUp from './components/FormAuthorization/SignUp';
 import Login from './components/FormAuthorization/Login';
 
-
-
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -35,14 +33,13 @@ import {
 import Protected from './components/Protected/Protected'
 import HomePage from './pages/HomePage'
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="signup" element={<SignUp />} />
-      <Route path="login" element={<Login />} />
+      <Route path='/si' element={<SignUp />} />
+      <Route path="/lo" element={<Login />} />
       <Route path="/" element={<Protected />} >
-        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<HomePage />} />
       </Route>
     </Route>
   )

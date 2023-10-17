@@ -23,8 +23,6 @@ import './index.scss'
 import SignUp from './components/FormAuthorization/SignUp';
 import Login from './components/FormAuthorization/Login';
 
-
-
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -34,7 +32,6 @@ import {
 
 import Protected from './components/Protected/Protected'
 import HomePage from './pages/HomePage'
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(

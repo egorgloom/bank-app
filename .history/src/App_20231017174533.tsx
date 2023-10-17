@@ -43,7 +43,7 @@
 import './styles/App.scss';
 
 import { Outlet } from 'react-router-dom';
-
+import Card from './components/Card/Card';
 
 
 
@@ -54,7 +54,7 @@ function App() {
   return (
     <div>
       <Outlet />
-
+      {/* <Card /> */}
     </div>
   )
 }

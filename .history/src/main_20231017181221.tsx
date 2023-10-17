@@ -34,7 +34,8 @@ import {
 
 import Protected from './components/Protected/Protected'
 import HomePage from './pages/HomePage'
-
+// import Login from './pages/Login';
+// import Signup from './pages/Signup';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

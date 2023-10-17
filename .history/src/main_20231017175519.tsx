@@ -20,8 +20,8 @@ import App from './App'
 
 import './index.scss'
 
-import SignUp from './components/FormAuthorization/SignUp';
-import Login from './components/FormAuthorization/Login';
+// import SignUp from './components/FormAuthorization/SignUp';
+// import Login from './components/FormAuthorization/Login';
 
 
 
@@ -34,12 +34,13 @@ import {
 
 import Protected from './components/Protected/Protected'
 import HomePage from './pages/HomePage'
-
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="signup" element={<SignUp />} />
+      <Route path="signup" element={<Signup />} />
       <Route path="login" element={<Login />} />
       <Route path="/" element={<Protected />} >
         <Route path="/" element={<HomePage />} />
