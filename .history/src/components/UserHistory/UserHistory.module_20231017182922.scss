@@ -4,10 +4,13 @@
 
 
 .userBlock {
+
     display: grid;
     align-items: center;
     grid-auto-columns: 1fr;
     grid-template-columns: 4fr 16fr 16fr 5fr;
+
+
 
     .user {
         width: 60px;

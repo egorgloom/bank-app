@@ -112,18 +112,25 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                         <div className={styles.elementContainer} ref={calendarRef}>
                             <div className={`dropdown ${open ? 'active' : 'inactive'}`}>
                                 <input
+
                                     type='text'
+
                                     readOnly
+
+
                                     value={`${formatDate.startDate}-${formatDate.endDate}`}
+
                                 />
                                 <DateRange
                                     className={styles.calendarStyle}
+                                    // onChange={(item) => setState([item.selection])}
                                     onChange={handleSelection}
                                     ranges={state}
+                                    // showSelectionPreview={false}
                                     editableDateInputs={false}
                                     showMonthAndYearPickers={false}
                                     showDateDisplay={false}
-                                    rangeColors={['rgb(110,70,143)', 'rgb(110,70,143)', '#000000']}
+                                    rangeColors={['#4C988E', '#4C988E', '#000000']}
                                     direction='horizontal'
                                 />
                             </div>

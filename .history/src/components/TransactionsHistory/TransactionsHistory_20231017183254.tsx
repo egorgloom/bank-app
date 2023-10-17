@@ -123,7 +123,7 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                                     editableDateInputs={false}
                                     showMonthAndYearPickers={false}
                                     showDateDisplay={false}
-                                    rangeColors={['rgb(110,70,143)', 'rgb(110,70,143)', '#000000']}
+                                    rangeColors={['#4C988E', '#4C988E', '#000000']}
                                     direction='horizontal'
                                 />
                             </div>

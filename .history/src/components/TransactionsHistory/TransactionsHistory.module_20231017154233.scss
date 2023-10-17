@@ -27,6 +27,7 @@
             gap: 20px;
 
             .container {
+                // padding: 5rem;
     
                 .elementContainer {
                     position: relative;
@@ -35,7 +36,7 @@
     
                     .calendarStyle {
                         border: 1px solid #eee;
-                        font-family: 'Urbanist', sans-serif;
+                        font-family: poppins;
                         border-radius: 1.5rem;
                         z-index: 10;
                         position: relative;
