@@ -28,14 +28,14 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
 
     const [sortedTransactions, setSortedTransactions] = useState<ITransactionsHistory[]>([]); // результаты поиска
 
-    const [state] = useState<any>([{
+    const [state, setState] = useState<any>([{
         startDate: new Date(),
         endDate: new Date(),
         key: 'selection',
     },])
 
     // handle date formatting
-    const [ setFormatDate] = useState<any>({
+    const [formatDate, setFormatDate] = useState<any>({
         startDate: new Date(),
         endDate: new Date(),
     });

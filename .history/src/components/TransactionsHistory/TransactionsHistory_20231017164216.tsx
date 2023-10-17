@@ -28,14 +28,14 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
 
     const [sortedTransactions, setSortedTransactions] = useState<ITransactionsHistory[]>([]); // результаты поиска
 
-    const [state] = useState<any>([{
+    const [state, setState] = useState<any>([{
         startDate: new Date(),
         endDate: new Date(),
         key: 'selection',
     },])
 
     // handle date formatting
-    const [ setFormatDate] = useState<any>({
+    const [formatDate, setFormatDate] = useState<any>({
         startDate: new Date(),
         endDate: new Date(),
     });
@@ -50,6 +50,7 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
                 startDate: format(state[0].startDate, 'dd/MM/yyyy'),
                 endDate: format(state[0].endDate, 'dd/MM/yyyy'),
             }
+
         })
     }, [state])
 
@@ -131,6 +132,7 @@ const TransactionsHistory: FC<ITransactionsHistory> = () => {
             <div className={styles.blockHistory}>
                     {sortedTransactions.map((elem) => {
                         return (
+                            // <div key={elem.id}>{`${date}`}</div>
                             <UserHistory key={elem.id} {...elem} />
                         )
                     })}
