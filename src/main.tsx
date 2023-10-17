@@ -1,19 +1,3 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import { BrowserRouter } from 'react-router-dom'
-// import App from './App'
-// import './index.scss'
-
-
-// ReactDOM.createRoot(document.getElementById('root')!).render(
-//   <BrowserRouter> 
-//    <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-//   </BrowserRouter>
-// ,
-// )
-
 import ReactDOM from 'react-dom/client'
 
 import App from './App'
@@ -22,8 +6,8 @@ import './index.scss'
 
 import SignUp from './components/FormAuthorization/SignUp';
 import Login from './components/FormAuthorization/Login';
-
-
+import Protected from './components/Protected/Protected'
+import HomePage from './pages/HomePage'
 
 import {
   createBrowserRouter,
@@ -32,8 +16,6 @@ import {
   Route,
 } from "react-router-dom";
 
-import Protected from './components/Protected/Protected'
-import HomePage from './pages/HomePage'
 
 
 const router = createBrowserRouter(
