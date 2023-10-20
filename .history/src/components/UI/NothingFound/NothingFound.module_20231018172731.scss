@@ -1,0 +1,12 @@
+@import "../../../styles/variables.scss";
+
+.nothingFound {
+    font-family: 'Urbanist', sans-serif;
+    font-size: $fs20;
+    color: $light-gray;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
