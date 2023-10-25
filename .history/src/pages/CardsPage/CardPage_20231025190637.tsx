@@ -1,0 +1,37 @@
+import { FC } from 'react';
+
+import { useGetCardQuery, useRemoveCardMutation } from '../../components/API/JsonServer';
+import Loading from '../../components/UI/Loading/Loading';
+
+
+import 'react-credit-cards-2/dist/lib/styles.scss';
+
+import { ICard } from '../../interfaces/interface';
+
+import CardPageItem from './CardPageItem';
+
+
+const CardPage: FC = () => {
+
+  const { data, isLoading } = useGetCardQuery('');
+
+  const [removeCard] = useRemoveCardMutation()
+
+  
+  const handleRemove = (card: ICard) => {
+    removeCard(card)
+  }
+
+  return (
+    <>
+      <div className='cardsPage'>
+        {isLoading ? (<Loading title='Loading...' />) : data ? (
+          data.map((elem: any) =>
+          <CardPageItem key={elem.id} {...elem} remove={handleRemove} elem={elem}/>)
+        ) : (<div>Not Found</div>)}
+      </div >
+    </>
+  );
+};
+
+export default CardPage;

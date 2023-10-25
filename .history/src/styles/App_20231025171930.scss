@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100;200;300;400;700&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "variables";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+// .purple1 { 
+//   background-color: $purple;
+//   color: $bg-container;
+// }
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+#root {
+  width: 1300px;
+  background: $bg-main;
+  font-family: 'Urbanist', sans-serif;
+  margin: 0 auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+ 
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 30% calc(70% - 20px);
+  grid-template-rows: auto auto;
+  gap: 20px 20px;
+  grid-template-areas:
+    ". ."
+    ". .";
+}
+.referralWrapper { 
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.cardsPage {
+  border-radius: 20px;
+  background-color: $bg-container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 70px;
+  height: 100%;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 24px;
+  right: 17px;
+}
+
+.dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 500ms ease;
+}
+
+.dropdown.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: 500ms ease;
+}
+
+
+//myModal
+.myModal {
+
+  background-color: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  z-index: 10;
+
+}
+.modalContainer {
+  border-radius: 20px;
+  padding: 20px;
+  width: 50%;
+  background-color: white;
+  transform: scale(0.5);
+  transition: 0.4s all;
+}
+
+.modalContainer.active {
+  transform: scale(1);
+}
+
+.myModal.active {
+  opacity: 1;
+  pointer-events: all;
+}

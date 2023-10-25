@@ -1,0 +1,68 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/templates/btnTemplates.scss";
+
+.ButtonPurple {
+    @extend %btn;
+    // white-space: pre;
+    span {
+        font-size: $fs18;
+        display: flex;
+        align-items: center;
+    }
+
+
+}
+
+.purple {
+
+    background-color: $purple;
+    color: $bg-container;
+    padding: 15px 20px;
+    width: calc(80%);
+
+
+    &:hover {
+        background-color: $purple-hover;
+    }
+
+}
+
+.pink {
+
+    color: $remove-color;
+    background-color: $remove;
+    padding: 15px 20px;
+    width: calc(100%);
+
+
+
+    &:hover {
+        background-color: $remove-hover;
+    }
+
+}
+
+.gray {
+    color: $black;
+    background-color: $bg-main;
+    padding: 15px 20px;
+    width: calc(100%);
+
+
+
+    &:hover {
+        background-color: $light-gray;
+    }
+}
+
+.smallPurple {
+    font-size: $fs17;
+    color: $purple;
+    cursor: pointer;
+    border-style: none;
+    background-color: transparent;
+
+    &:hover {
+        color: $purple-hover;
+    }
+}
