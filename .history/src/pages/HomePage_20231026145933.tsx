@@ -6,8 +6,6 @@ import Header from '../components/Header/Header';
 import NavigationLink from '../components/NavigationLink/NavigationLink';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Summary from './Summary/Summary';
-import { Routes, Route } from 'react-router-dom';
-import CardPage from './CardsPage/CardPage';
 
 
 
@@ -20,10 +18,7 @@ const HomePage: FC<IHomePage> = () => {
     <NavigationLink />
     <Sidebar />
     <div className='pageContainer'>
-       <Routes>
-           <Route path='*' element={<Summary />}/>
-           <Route path='/cards' element={<CardPage />}/>
-          </Routes>
+      {/* <Summary /> */}
     </div>
   </div>
   );

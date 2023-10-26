@@ -10,6 +10,8 @@ import styles from './RecentContacts.module.scss'
 
 import LastUser from '../LastUser/LastUser';
 
+import useFetchData from '../../hooks/useFetching';
+
 import { ITransactionsHistory } from '../../interfaces/interface';
 import { useGetHistoryQuery } from '../API/JsonServer';
 

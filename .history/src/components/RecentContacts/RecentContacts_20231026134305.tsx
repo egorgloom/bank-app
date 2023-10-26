@@ -10,14 +10,14 @@ import styles from './RecentContacts.module.scss'
 
 import LastUser from '../LastUser/LastUser';
 
+import useFetchData from '../../hooks/useFetching';
+
 import { ITransactionsHistory } from '../../interfaces/interface';
-import { useGetHistoryQuery } from '../API/JsonServer';
 
 
 const RecentContacts: FC = () => {
 
-   const {data, isLoading} = useGetHistoryQuery('')
-
+    const { data, loading } = useFetchData<ITransactionsHistory[]>('https://server-shop-co.onrender.com/history')
 
     return (
         <div className={styles.recentContainer}>
@@ -30,13 +30,14 @@ const RecentContacts: FC = () => {
                     <BtnDashed icon={<HiPlus />} title='Add' color='dashed'/>
                 </div>
                 <div className={styles.lastUserList}>
-                    {isLoading ? <Loading title='Loading...'/> : 
+                    {loading ? <Loading title='Loading...'/> : 
                     <>
-                    {data?.map((user: ITransactionsHistory) => <LastUser key={user.id} {...user}/>)}
+                    {data?.map(user => <LastUser key={user.id} {...user}/>)}
                     </>
                     }
                 </div>
             </div>
+
         </div>
     );
 };

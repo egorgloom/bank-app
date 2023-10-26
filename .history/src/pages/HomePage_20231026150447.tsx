@@ -20,10 +20,10 @@ const HomePage: FC<IHomePage> = () => {
     <NavigationLink />
     <Sidebar />
     <div className='pageContainer'>
-       <Routes>
-           <Route path='*' element={<Summary />}/>
+       {/* <Routes>
+           <Route path='/summary' element={<Summary />}/>
            <Route path='/cards' element={<CardPage />}/>
-          </Routes>
+          </Routes> */}
     </div>
   </div>
   );

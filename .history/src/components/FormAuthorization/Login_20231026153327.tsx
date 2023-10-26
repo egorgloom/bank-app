@@ -1,46 +1,45 @@
+import { useState } from 'react'
+import { auth } from '../../../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+
 import { FC } from 'react';
 
-import { useState } from 'react'
-
-import { auth } from '../../../firebase';
-
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-
-import { useNavigate } from 'react-router-dom';
 
 import FormAuthorization from './FormAuthorization';
 
+interface ILogin {
 
+}
 
-interface ISignUp { }
-
-const SignUp: FC<ISignUp> = () => {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login: FC<ILogin> = () => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log(userCredential);
       const user = userCredential.user;
       localStorage.setItem('token', user.uid); //login
       localStorage.setItem('user', JSON.stringify(user));
-      navigate("*");
+      navigate("/h");
     } catch (error) {
       console.error(error);
     }
   }
+
   return (
     <>
       <FormAuthorization
-        linkForm='/login'
-        titleBtn='Sign up'
-        text='Need to Login?'
-        linkText='Login'
-        title='Sign up page'
+        linkForm='/signup'
+        titleBtn='Sign in'
+        text='Need to Sign up?'
+        linkText='Create Account'
+        title='Sign in page'
         email={email}
         setEmail={setEmail}
         password={password}
@@ -50,4 +49,4 @@ const SignUp: FC<ISignUp> = () => {
   )
 };
 
-export default SignUp;
+export default Login;

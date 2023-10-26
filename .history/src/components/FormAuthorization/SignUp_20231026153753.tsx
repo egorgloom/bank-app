@@ -28,7 +28,7 @@ const SignUp: FC<ISignUp> = () => {
       const user = userCredential.user;
       localStorage.setItem('token', user.uid); //login
       localStorage.setItem('user', JSON.stringify(user));
-      navigate("*");
+      navigate("/summary/*");
     } catch (error) {
       console.error(error);
     }

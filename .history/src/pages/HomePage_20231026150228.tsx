@@ -21,8 +21,8 @@ const HomePage: FC<IHomePage> = () => {
     <Sidebar />
     <div className='pageContainer'>
        <Routes>
-           <Route path='*' element={<Summary />}/>
-           <Route path='/cards' element={<CardPage />}/>
+           <Route path='/summary' element={<Summary />}/>
+           {/* <Route path='/cards' element={<CardPage />}/> */}
           </Routes>
     </div>
   </div>

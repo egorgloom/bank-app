@@ -100,8 +100,8 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route path="signup" element={<SignUp />} />
       <Route path="login" element={<Login />} />
-      <Route path="/" element={<Protected />} >
-        <Route path="*" index element={<HomePage />} />
+      <Route path="/h" element={<Protected />} >
+        <Route path="/" index element={<HomePage />} />
       </Route>
     </Route>
   )

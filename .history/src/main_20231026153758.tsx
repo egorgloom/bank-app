@@ -101,7 +101,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<SignUp />} />
       <Route path="login" element={<Login />} />
       <Route path="/" element={<Protected />} >
-        <Route path="*" index element={<HomePage />} />
+        <Route path="/summary/*" index element={<HomePage />} />
       </Route>
     </Route>
   )

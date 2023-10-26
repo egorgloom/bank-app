@@ -12,7 +12,7 @@ export const JsonServerSlice = createApi({
             query: () => '/card',
             providesTags: ['Card'],
         }),
-        getHistory: builder.query<ITransactionsHistory[], any>({
+        getHistory: builder.query<ITransactionsHistory[], string>({
             query: () => '/history',
             providesTags: ['History']
         }),

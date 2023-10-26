@@ -87,11 +87,9 @@ import {
 
 import { Provider } from 'react-redux';
 import { store } from './store';
-
 import Login from './components/FormAuthorization/Login';
 import SignUp from './components/FormAuthorization/SignUp';
 import Protected from './components/Protected/Protected';
-
 import HomePage from './pages/HomePage';
 
 
@@ -101,7 +99,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<SignUp />} />
       <Route path="login" element={<Login />} />
       <Route path="/" element={<Protected />} >
-        <Route path="*" index element={<HomePage />} />
+        <Route path="/home" index element={<HomePage />} />
       </Route>
     </Route>
   )
