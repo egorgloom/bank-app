@@ -97,9 +97,9 @@ import HomePage from './pages/HomePage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path="/app" element={<App />}>
       <Route path="signup" element={<SignUp />} />
-      <Route path="login" index element={<Login />} />
+      <Route path="login" element={<Login />} />
       <Route path="/" element={<Protected />} >
         <Route path="*" index element={<HomePage />} />
       </Route>

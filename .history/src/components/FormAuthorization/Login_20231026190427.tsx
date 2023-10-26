@@ -1,25 +1,22 @@
+import { useState } from 'react'
+import { auth } from '../../../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
+
 import { FC } from 'react';
 
 import styles from './FormAuthorization.module.scss'
 
-import { auth } from '../../../firebase';
-
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-
-import { Link, useNavigate } from 'react-router-dom';
-
-
+import { useForm, SubmitHandler } from 'react-hook-form';
+import Button from '../UI/Button/Button';
 import { IAuth } from '../../interfaces/interface';
 
-import { useForm, SubmitHandler } from 'react-hook-form';
+interface ILogin {
 
-import Button from '../UI/Button/Button';
+}
 
+const Login: FC<ILogin> = () => {
 
-
-interface ISignUp { }
-
-const SignUp: FC<ISignUp> = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm<IAuth>({
     mode: 'onSubmit'
@@ -28,9 +25,10 @@ const SignUp: FC<ISignUp> = () => {
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<IAuth> = async (data) => {
-
+    // e.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+      const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
+      console.log(userCredential);
       const user = userCredential.user;
       localStorage.setItem('token', user.uid); //login
       localStorage.setItem('user', JSON.stringify(user));
@@ -39,18 +37,19 @@ const SignUp: FC<ISignUp> = () => {
       console.error(error);
     }
   }
+
   return (
     <>
       <div className={styles.formContainer}>
-        <h1>Sign up</h1>
+        <h1>Sign in</h1>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-          <label className={styles.label}>E-mail</label>
+          <label htmlFor="username" className={styles.label}>Username</label>
           <input
             {...register('email',
               {
                 required: true,
                 pattern: {
-                  value: /.+@[^@]+\.[^@]{2,}$/,
+                  value: /^(?=.*\d)(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])(?=.*[a-z])(?=.*[A-Z]).{5,10}$/,
                   message: 'Enter valid e-mail'
                 },
               },
@@ -59,10 +58,16 @@ const SignUp: FC<ISignUp> = () => {
             placeholder='E-mail'
             className={styles.input}
           />
-          {errors.email && (<div style={{
-            'color': 'red'
-          }}>{errors.email.message}</div>)}
-          <label className={styles.label}>Password</label>
+                          {errors.email && (<div style={{
+                    'color': 'red'
+                }}>{errors.email.message}</div>)}
+          {/* 
+                {errors.email && (<div style={{
+                    'color': 'red'
+                }}>{errors.email.message}</div>)} */}
+
+          <label htmlFor="username" className={styles.label}>Password</label>
+
           <input
             {...register('password',
               {
@@ -77,15 +82,16 @@ const SignUp: FC<ISignUp> = () => {
             placeholder='Password'
             className={styles.input}
           />
-          {errors.password && (<div style={{
-            'color': 'red'
-          }}>{errors.password.message}</div>)}
+                          {errors.password && (<div style={{
+                    'color': 'red'
+                }}>{errors.password.message}</div>)}
           <Button color='purple' title='signIn' type="submit" />
-          <p>Need to Login? <Link to='/login'>Login</Link></p>
+          
         </form>
+        <p>Need to Signup? <Link to='/signup'>Create Account</Link></p>
       </div>
     </>
   )
 };
 
-export default SignUp;
+export default Login;

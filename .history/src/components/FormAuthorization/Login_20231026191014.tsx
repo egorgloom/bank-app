@@ -1,25 +1,19 @@
+
+import { auth } from '../../../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
+
 import { FC } from 'react';
 
 import styles from './FormAuthorization.module.scss'
 
-import { auth } from '../../../firebase';
-
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-
-import { Link, useNavigate } from 'react-router-dom';
-
-
+import { useForm, SubmitHandler } from 'react-hook-form';
+import Button from '../UI/Button/Button';
 import { IAuth } from '../../interfaces/interface';
 
-import { useForm, SubmitHandler } from 'react-hook-form';
 
-import Button from '../UI/Button/Button';
+const Login: FC = () => {
 
-
-
-interface ISignUp { }
-
-const SignUp: FC<ISignUp> = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm<IAuth>({
     mode: 'onSubmit'
@@ -28,9 +22,9 @@ const SignUp: FC<ISignUp> = () => {
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<IAuth> = async (data) => {
-
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+      const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
+      console.log(userCredential);
       const user = userCredential.user;
       localStorage.setItem('token', user.uid); //login
       localStorage.setItem('user', JSON.stringify(user));
@@ -39,12 +33,13 @@ const SignUp: FC<ISignUp> = () => {
       console.error(error);
     }
   }
+
   return (
     <>
       <div className={styles.formContainer}>
-        <h1>Sign up</h1>
+        <h1>Sign in</h1>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-          <label className={styles.label}>E-mail</label>
+          <label htmlFor="username" className={styles.label}>Username</label>
           <input
             {...register('email',
               {
@@ -62,7 +57,10 @@ const SignUp: FC<ISignUp> = () => {
           {errors.email && (<div style={{
             'color': 'red'
           }}>{errors.email.message}</div>)}
-          <label className={styles.label}>Password</label>
+
+
+          <label htmlFor="username" className={styles.label}>Password</label>
+
           <input
             {...register('password',
               {
@@ -81,11 +79,12 @@ const SignUp: FC<ISignUp> = () => {
             'color': 'red'
           }}>{errors.password.message}</div>)}
           <Button color='purple' title='signIn' type="submit" />
-          <p>Need to Login? <Link to='/login'>Login</Link></p>
+
         </form>
+        <p>Need to Signup? <Link to='/signup'>Create Account</Link></p>
       </div>
     </>
   )
 };
 
-export default SignUp;
+export default Login;

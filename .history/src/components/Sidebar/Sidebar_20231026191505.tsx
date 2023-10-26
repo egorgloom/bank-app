@@ -57,6 +57,9 @@ const Sidebar: FC = () => {
                 </ul>
                 <div className={styles.buttons}>
                     <Button title='Add Card' icon={<HiPlus />} color='purple' onClick={()=>setModalActive(true)}/>
+                    {/* <Link to='/cards'> */}
+                    <Button title='Remove' icon={<HiMinus />} color='pink' />
+                    {/* </Link> */}
                     <MyModal active={modalActive} setActive={setModalActive}>
                         <AddCard />
                     </MyModal>

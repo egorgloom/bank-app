@@ -6,31 +6,42 @@ import Button from '../UI/Button/Button';
 
 import { Link } from 'react-router-dom';
 
-import { IAuth, IFormAuthorization } from '../../interfaces/interface'
+import { IFormAuthorization } from '../../interfaces/interface'
 import { useForm } from 'react-hook-form';
 
 const FormAuthorization: FC<IFormAuthorization> = ({ ...props }) => {
 
-    const [state, setState] = useState<IAuth>({
+    const [state, setState] = useState({
         email: '',
         password: ''
     });
 
     const handleInputChange = (evt: any): void => {
         const { elem, value } = evt.target;
-
+    
         setState((prev: any) => ({ ...prev, [elem]: value }));
-    }
+      }
 
     const { register, formState: { errors } } = useForm({
         mode: 'onChange'
     })
 
-    console.log(state.email)
-
     return (
         <div className={styles.formContainer}>
             <h1>{props.title}</h1>
+
+
+
+            {/* {errors.email && (<div style={{
+                'color': 'red'
+            }}>{errors.email.message}</div>)} */}
+
+
+
+
+
+
+
             <form onSubmit={props.handleSubmit} className={styles.form}>
                 <label className={styles.label} htmlFor="username">Username</label>
                 {/* <input
@@ -41,27 +52,21 @@ const FormAuthorization: FC<IFormAuthorization> = ({ ...props }) => {
                     onChange={(e) => props.setEmail(e.target.value)}
                     className={styles.input}
                 /> */}
-                <input
-                    {...register('email',
-                        {
-                            required: true,
-                            pattern: {
-                                value: /.+@[^@]+\.[^@]{2,}$/,
-                                message: 'Enter valid e-mail'
-                            },
+                            <input
+                {...register('email',
+                    {
+                        required: true,
+                        pattern: {
+                            value: /.+@[^@]+\.[^@]{2,}$/,
+                            message: 'Enter valid e-mail'
                         },
-                    )}
-                    type='email'
-                    placeholder='E-mail'
-                    onChange={handleInputChange}
-                    className={styles.input}
+                    },
+                )}
+                type='email'
+                placeholder='E-mail'
+                onChange={handleInputChange}
 
-                />
-{/* 
-                {errors.email && (<div style={{
-                    'color': 'red'
-                }}>{errors.email.message}</div>)} */}
-
+            />
                 <label className={styles.label} htmlFor="username">Password</label>
                 <input
                     type="password"
