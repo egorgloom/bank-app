@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    gap: 20px;
+}
+.logo {
+    width: 75px;
+    height: 75px;
+}
+
+@media (max-width: 992px) {
+
+    .header {
+        // box-sizing: border-box;
+
+        // justify-content: space-between;
+        // align-items: center;
+    }
+}

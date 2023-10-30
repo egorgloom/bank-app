@@ -1,0 +1,38 @@
+@import "../../styles/variables.scss";
+
+.moneyContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: $bg-container;
+    // background-image: url('../../assets/bg-dollars.svg');
+    // background-position: top;
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+    
+
+    .money {
+        // margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            font-size: $fs16;
+            color: $light-gray;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+    }
+
+    a {
+        display: block;
+        margin: 10px auto;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        color: $purple;
+    }
+}

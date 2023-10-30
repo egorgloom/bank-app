@@ -1,0 +1,134 @@
+@import "../../styles/variables.scss";
+
+.block {
+  position: relative;
+  z-index: 0;
+  margin-top: 20px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 40px;
+    background: $black;
+    height: 150px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+
+  }
+
+  &:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 75%;
+    transform: rotate(-2deg);
+    top: -25px;
+    left: 14%;
+    height: 100px;
+    background-color: $purple;
+    border-radius: 20px;
+    transition: transform .3s ease-in-out;
+  }
+
+  .mastercardIcon {
+    display: inline-block;
+    height: 16px;
+    isolation: isolate;
+    position: relative;
+    line-height: 16px;
+    vertical-align: middle;
+    width: 26px;
+    margin-right: 7px;
+
+    &::after,
+    &::before {
+      border-radius: .5em;
+      content: "";
+      display: inline-block;
+      height: 1em;
+      position: absolute;
+      width: 1em;
+    }
+
+    &::before {
+      background-color: $red-mastercard;
+      left: 0;
+      top: 0;
+    }
+
+    &::after {
+      background-color: $orange-mastercard;
+      mix-blend-mode: hard-light;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .userName {
+    font-family: 'Urbanist', sans-serif;
+    font-size: $fs24;
+    font-weight: 400;
+    color: $bg-container
+  }
+
+  .numberCard {
+    background: transparent;
+    border-style: none;
+    width: 70%;
+    outline: none;
+
+  }
+
+  .numberCard {
+    color: $bg-container;
+    font-family: 'Urbanist', sans-serif;
+    font-size: $fs20;
+    font-weight: 200;
+    letter-spacing: 3px;
+
+    &::placeholder {
+      color: $bg-container;
+      font-family: 'Urbanist', sans-serif;
+      font-size: $fs20;
+      font-weight: 200;
+      letter-spacing: 3px;
+    }
+
+  }
+
+  .cvvDiv {
+    background: $dark-grey;
+    padding: 5px 10px;
+    width: calc(10% + 25px);
+    border-radius: 20px;
+    
+  }
+
+
+  .cvv {
+    color: $bg-container;
+    font-size: $fs14;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 300;
+    background: transparent;
+    border-style: none;
+    outline: none;
+    width: 30px;
+
+    &::placeholder {
+      color: $bg-container;
+      font-size: $fs14;
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .block { 
+    width: 50%;
+    margin: 20px auto;
+  }
+ }

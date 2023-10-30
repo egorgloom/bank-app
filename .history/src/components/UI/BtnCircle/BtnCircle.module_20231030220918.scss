@@ -1,0 +1,63 @@
+@import "../../../styles//variables.scss";
+
+.btnDashedContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    color: $purple;
+    font-weight: 600;
+    height: 100%;
+
+    
+    
+}
+.btnDashed {
+    background-color: transparent;
+    border: 2px dashed $purple;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: $fs24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $purple;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.black {
+    border-radius: 50%;
+    background-color: $black;
+    border: none;
+    color: $bg-container;
+    width: 50px;
+    height: 50px;
+    cursor: auto;
+
+    &:hover {
+        transform: scale(1);
+    }
+}
+
+.purple {
+    width: 40px;
+    height: 40px;
+    background-color: $purple;
+    color: $bg-container;
+    font-size: $fs24;
+}
+
+.purple {
+    width: 60px;
+    height: 60px;
+    background-color: $purple;
+    color: $bg-container;
+    font-size: $fs24;
+}

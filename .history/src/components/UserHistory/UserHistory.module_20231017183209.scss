@@ -1,0 +1,65 @@
+@import "../../styles/variables.scss";
+
+
+
+
+.userBlock {
+    display: grid;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 4fr 16fr 16fr 5fr;
+
+    .user {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $remove;
+        color: $remove-color;
+        font-size: $fs24;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6px;
+  
+        .first {
+            font-size: $fs16;
+            color: $black;
+            font-weight: 600;
+        }
+
+        .second {
+            font-size: $fs16;
+            color: $light-gray;
+            font-weight: 400;
+        }
+    }
+
+    .sumBlock {
+        display: flex;
+        justify-content: end;
+        column-gap: 4px;
+
+        .usd {
+            font-size: $fs11;
+            color: $remove-color;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .sum {
+            font-size: $fs20;
+            font-weight: 600;
+            color: $remove-color;
+        }
+
+
+    }
+
+}
