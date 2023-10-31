@@ -1,0 +1,45 @@
+.header {
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .logo {
+        width: 75px;
+        height: 75px;
+    }
+
+
+}
+
+
+
+@media (max-width: 992px) {
+
+    .header {
+        height: inherit;
+        width: 792px;
+        padding: 0 50px;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 70px;
+
+    }
+
+
+
+    
+}
+
+@media (max-width: 768px) {
+
+    
+    .header {
+        height: inherit;
+        width: 568px;
+        padding: 0 50px;
+        justify-content: space-between;
+    }
+
+}

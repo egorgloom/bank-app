@@ -1,0 +1,90 @@
+@import "../../styles/variables.scss";
+
+.sidebarWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+
+    .sidebarContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        width: 100%;
+        border-radius: 15px;
+        padding: 25px;
+        background-color: $bg-container;
+
+        .cards {
+            font-size: $fs20;
+            color: $light-gray;
+        }
+
+        .sidebarOptions {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            font-size: $fs18;
+            color: $black;
+            font-weight: 700;
+        }
+
+        .sidebarOptions {
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+            }
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            .btna {
+                
+                background-color: $purple;
+                border-radius: 20px;
+                color: $bg-container;
+                font-size: $fs18;
+                padding: 15px 20px;
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebarWrapper {
+        width: 792px;
+     }
+
+     .sidebarOptions { 
+        width: 60%;
+        margin: 0 auto;
+     }
+
+     .buttons {
+        width: 30%;
+        margin: 0 auto;
+     }
+}
+
+@media (max-width: 768px) {
+    .sidebarWrapper {
+        width: 568px;
+     }
+
+     .sidebarOptions { 
+        width: 60%;
+        margin: 0 auto;
+     }
+
+     .buttons {
+        width: 30%;
+        margin: 0 auto;
+     }
+}

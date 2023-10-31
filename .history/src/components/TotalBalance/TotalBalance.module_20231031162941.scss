@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+.balanceContainer {
+    padding: 20px;
+    width: 60%;
+    min-height: 220px;
+    background: $bg-container;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .title {
+        font-size: $fs18;
+        color: $light-gray;
+    }
+
+    .balance {
+        font-size: $fs60;
+        color: $black;
+        font-weight: 500;
+    
+    }
+    .currency {
+        font-size: $fs20;
+        color: $light-gray;
+    }
+
+    .btnBlock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 768px) { 
+    .balanceContainer { 
+        width: 568px; 
+    }
+}
+
