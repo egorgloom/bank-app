@@ -1,0 +1,100 @@
+@import "../../styles/variables.scss";
+
+.transactionContainer {
+    padding: 20px;
+    width: 100%;
+    min-height: 287px;
+    background: $bg-container;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .titleContainer {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+            display: block;
+            font-size: $fs18;
+            color: $light-gray;
+        }
+
+        .btnBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            .container {
+                .elementContainer {
+                    position: relative;
+                    .calendarStyle {
+                        border: 1px solid #eee;
+                        font-family: 'Urbanist', sans-serif;
+                        border-radius: 1.5rem;
+                        z-index: 10;
+                        position: relative;
+                        background-color: #fff;
+                        width: 100%;
+                        height: auto;
+                        font-size: $fs10;
+                    }
+                }
+            }
+        }
+    }
+
+    .blockHistory {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    
+.transactionContainer {
+    padding: 0px;
+    width: 100%;
+    min-height: 287px;
+    background: $bg-container;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .titleContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .title {
+            display: block;
+            font-size: $fs18;
+            color: $light-gray;
+        }
+
+        .btnBlock {
+            .container {
+                .elementContainer {
+                    position: relative;
+                    .calendarStyle {
+                        font-size: $fs10;
+                        right: -60px;
+                    }
+                }
+            }
+        }
+    }
+
+    .blockHistory {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+}
+

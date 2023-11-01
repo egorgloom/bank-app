@@ -1,0 +1,16 @@
+@import "../../styles//variables.scss";
+
+.lastUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    color: $light-gray;
+    font-size: $fs16;
+    
+    img {
+        width: 70px;
+        height: 70px;
+    }
+}

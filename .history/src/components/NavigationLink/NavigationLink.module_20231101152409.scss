@@ -1,0 +1,60 @@
+@import "../../styles/variables.scss";
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 73px;
+    border-radius: 50px;
+    background-color: $bg-container;
+    
+    .navLink {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: $fs18;
+        padding: 0px 50px;
+        
+    }
+
+
+}
+
+
+
+@media (max-width: 992px) {
+
+    .navContainer {
+        display: flex;
+        position: absolute;
+        top: -250px;
+        right: 0;
+        height: 300px;
+        width: 80%;
+        z-index: 2;
+
+        &.active {
+            top: 100px;
+        }
+
+        .navLink {
+            padding: 20px 0px;
+            height: inherit;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+
+    
+}
+
+@media (max-width: 480px) { 
+
+}
+
+

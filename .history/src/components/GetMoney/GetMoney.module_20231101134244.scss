@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.moneyContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: $bg-container;
+    
+
+    .money {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            font-size: $fs16;
+            color: $light-gray;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+    }
+
+    a {
+        display: block;
+        margin: 10px auto;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        color: $purple;
+    }
+}
+
+@media (max-width: 992px) { 
+    .moneyContainer { 
+        padding: 50px;
+    }
+}
+
+
+@media (max-width: 480px) { 
+    .moneyContainer { 
+        padding: 50px;
+
+        a {
+
+            margin: 10px auto 0px 30px;
+
+        }
+    }
+}
