@@ -80,7 +80,7 @@ const SignUp: FC<ISignUp> = () => {
           {errors.password && (<div style={{
             'color': 'red'
           }}>{errors.password.message}</div>)}
-          <Button color='purple' title='Sign up' type="submit" />
+          <Button color='purple' title='Sign in' type="submit" />
           <p>Need to Login? <Link to='/login'>Login</Link></p>
         </form>
       </div>
